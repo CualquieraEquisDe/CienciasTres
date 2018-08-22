@@ -24,19 +24,25 @@ def evaluar(arbol):
         return evaluar(arbol.izq) * evaluar(arbol.der)
     return int(arbol.valor)
 
+def escritura(entrada, salida):
+    pila = Pila()
+    linea = entrada.readlines()
 
-pila = Pila()
+    for a in range(0, len(linea)):
+        var = linea[a].strip("\n").split(" ")
+        convertir(var, pila)
+        out = str(evaluar(pila.desapilar()))
+        salida.write(out + linesep)
+    
+
+    
+        
+
 entrada = open("expresion.in.txt")
 salida = open("expresion.out.txt", "a")
-lista = entrada.readline()
-#print(lista)
-for a in lista:
-    var = str(a.split(" "))
-    var = var.replace('\\n', '')
-    print(str(var))
-    convertir(var, pila)
-    out = str(evaluar(pila.desapilar()))
-    salida.write(out + linesep)
+
+escritura(entrada, salida)
 
 entrada.close()
 salida.close()
+
