@@ -7,7 +7,7 @@ David Gaona Poveda 20152020929
 
 # DESCRIPCION PROYECTOS
 
-libros.py---búsqueda de libro en una pila
-parqueadero.py-----asignacion de parqueaderos en una cola
-PruebaArchivosPython------ versión inicial lectura de expresiones en posfijo
-PruebaArchivosPythonV2-----versión inicial lectura de expresiones en posfijo con diccionario de variables
+1.libros.py---búsqueda de libro en una pila.
+2.parqueadero.py-----asignacion de parqueaderos en una cola.
+3.PruebaArchivosPython------ versión inicial lectura de expresiones en posfijo.
+4.PruebaArchivosPythonV2-----versión inicial lectura de expresiones en posfijo con diccionario de variables.
