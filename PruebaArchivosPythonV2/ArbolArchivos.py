@@ -32,11 +32,13 @@ def escritura(entrada, salida):
         var = linea[a].strip("\n").split(" ")
         convertir(var, pila)
         out = str(evaluar(pila.desapilar()))
-        salida.write(out + linesep)
-    
+        print (diccionario("a", out))
+        #salida.write(out + linesep)
 
-    
-        
+def diccionario(variable, valor):
+    dictionary = {}
+    dictionary[variable] = valor
+    return dictionary
 
 entrada = open("expresion.in.txt")
 salida = open("expresion.out.txt", "a")
