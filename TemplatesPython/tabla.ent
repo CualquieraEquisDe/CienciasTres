@@ -1,0 +1,54 @@
+entity TablaCliente {
+
+	id : number
+	nombre : varchar
+	limiteCredito : number
+	descuento : number
+
+}
+
+entity TablaPedido {
+
+	id : number
+	fecha : data
+
+}
+
+entity TablaProveedor {
+
+	id : number
+	nombre : varchar
+	NIT : number
+
+}
+
+entity TablaDireccion {
+	
+	id : number
+
+}
+
+entity TablaFactura {
+
+	id : number
+	valor : number
+	cantidadArticulo : number
+	cantidadPorEntregar : number
+	fecha : data
+
+}
+
+entity TablaArticulo {
+
+	id : number
+	nombre : varchar
+
+}
+
+entity TablaPlanta {
+
+	id : number
+	nombre : varchar
+	produccion : number
+
+}
