@@ -1,0 +1,7 @@
+create table {{entity.name|capitalize}} (
+
+	{% for property in entity.properties %}
+		{{property.name}} {{property.type|sqltype}};
+	{% endfor %}
+
+);

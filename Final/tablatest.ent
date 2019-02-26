@@ -1,0 +1,54 @@
+entity TablaCliente {
+
+	id : integer
+	nombre : string
+	limiteCredito : integer
+	descuento : integer
+
+}
+
+entity TablaPedido {
+
+	id : integer
+	fecha : fecha
+
+}
+
+entity TablaProveedor {
+
+	id : integer
+	nombre : string
+	NIT : integer
+
+}
+
+entity TablaDireccion {
+	
+	id : integer
+
+}
+
+entity TablaFactura {
+
+	id : integer
+	valor : integer
+	cantidadArticulo : integer
+	cantidadPorEntregar : integer
+	fecha : fecha
+
+}
+
+entity TablaArticulo {
+
+	id : integer
+	nombre : string
+
+}
+
+entity TablaPlanta {
+
+	id : integer
+	nombre : string
+	produccion : integer
+
+}
