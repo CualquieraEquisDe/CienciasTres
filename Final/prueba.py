@@ -28,11 +28,11 @@ def main(debug=False):
 
     def sqltype(s):
         """
-        Maps type names from PrimitiveType to Java.
+        Maps type names from PrimitiveType to SQL.
         """
         return {
-                'integer': 'number',
-                'string': 'varchar',
+                'integer': 'bigint',
+                'string': 'varchar(?)',
                 'fecha' : 'date'
         }.get(s.name, s.name)
 
@@ -53,23 +53,71 @@ def main(debug=False):
 
     jinja_env.filters['sqltype'] = sqltype
 
-    # Load template
+    # Load tabla template
     template = jinja_env.get_template('tabla.template')
 
+    folder = join(sqlgen_folder, "Tablas")        
+    if not exists(folder):
+        mkdir(folder)
+
     for entity in database_model.entities:
-        # For each entity generate html file
-        with open(join(sqlgen_folder,
+        # For each entity generate sql file
+        with open(join(folder,
                        "%s.sql" % entity.name.capitalize()), 'w') as f:
             f.write(template.render(entity=entity))
-"""
-    # Load agregar template
-    template = jinja_env.get_template('list.template')
 
-    for entity in person_model.entities:
-        # For each entity generate html file
-        with open(join(srcgen_folder,
-                       "agregar%s.html" % entity.name.capitalize()), 'w') as f:
+    # Load consulta template
+    template = jinja_env.get_template('consulta.template')
+
+    folder = join(sqlgen_folder, "Consultas")        
+    if not exists(folder):
+        mkdir(folder)
+
+    for entity in database_model.entities:
+        # For each entity generate sql file 
+        with open(join(folder,
+                       "consulta%s.sql" % entity.name.capitalize()), 'w') as f:
             f.write(template.render(entity=entity))
+
+    # Load consulta template
+    template = jinja_env.get_template('actualiza.template')
+
+    folder = join(sqlgen_folder, "Actualizar")        
+    if not exists(folder):
+        mkdir(folder)
+
+    for entity in database_model.entities:
+        # For each entity generate sql file 
+        with open(join(folder,
+                       "actualiza%s.sql" % entity.name.capitalize()), 'w') as f:
+            f.write(template.render(entity=entity))
+
+    # Load consulta template
+    template = jinja_env.get_template('inserta.template')
+
+    folder = join(sqlgen_folder, "Insertar")        
+    if not exists(folder):
+        mkdir(folder)
+
+    for entity in database_model.entities:
+        # For each entity generate sql file 
+        with open(join(folder,
+                       "insterta%s.sql" % entity.name.capitalize()), 'w') as f:
+            f.write(template.render(entity=entity))
+
+    # Load consulta template
+    template = jinja_env.get_template('alterar.template')
+
+    folder = join(sqlgen_folder, "Alterar")        
+    if not exists(folder):
+        mkdir(folder)
+
+    for entity in database_model.entities:
+        # For each entity generate sql file 
+        with open(join(folder,
+                       "altera%s.sql" % entity.name.capitalize()), 'w') as f:
+            f.write(template.render(entity=entity))
+"""
 
     # Load template
     template = jinja_env.get_template('editar.template')

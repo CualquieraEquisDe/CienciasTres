@@ -1,0 +1,11 @@
+ALTER TABLE {{entity.name|capitalize}}
+ADD ?;
+
+ALTER TABLE {{entity.name|capitalize}}
+DROP COLUMN ?;
+
+{% for property in entity.properties %}
+ALTER TABLE {{entity.name}}
+MODIFY COLUMN {{property.name}} ?;
+
+{% endfor %}

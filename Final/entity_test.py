@@ -53,11 +53,11 @@ def main(debug=False):
         os.mkdir(dot_folder)
     metamodel_export(entity_mm, join(dot_folder, 'entity_meta.dot'))
 
-    # Build Person model from person.ent file
-    person_model = entity_mm.model_from_file(join(this_folder, 'tablatest.ent'))
+    # Build database model from tablatest.ent file
+    database_model = entity_mm.model_from_file(join(this_folder, 'tablatest.ent'))
 
     # Export to .dot file for visualization
-    model_export(person_model, join(dot_folder, 'tablatest.dot'))
+    model_export(database_model, join(dot_folder, 'tablatest.dot'))
 
 
 if __name__ == "__main__":

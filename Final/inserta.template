@@ -1,0 +1,11 @@
+INSERT INTO {{entity.name|capitalize}} ({% for property in range(entity.properties|length)%}
+{% if property == entity.properties|length - 1 %}{{entity.properties[property].name}}
+{%else%}{{entity.properties[property].name}}, {%endif%}{%endfor%})
+VALUES ({% for property in range(entity.properties|length)%}{% if property == entity.properties|length - 1 %}?{%else%}?, {%endif%}{%endfor%})
+
+{% for property in entity.properties %}
+INSERT INTO {{entity.name}} ({{property.name}}) VALUES (?);
+
+{% endfor %}
+
+

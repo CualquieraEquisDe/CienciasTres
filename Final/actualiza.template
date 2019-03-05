@@ -1,0 +1,3 @@
+UPDATE {{entity.name}} 
+SET {% for property in entity.properties %}{{property.name}} = ?, {% endfor %}
+WHERE ?

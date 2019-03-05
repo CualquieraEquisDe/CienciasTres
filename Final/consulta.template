@@ -1,0 +1,5 @@
+SELECT {% for property in range(entity.properties|length)%}
+{% if property == entity.properties|length - 1 %}{{entity.properties[property].name}}{%else%}{{entity.properties[property].name}}, {%endif%}{%endfor%} FROM {{entity.name}};
+
+SELECT {% for property in range(entity.properties|length)%}
+{% if property == entity.properties|length - 1 %}{{entity.properties[property].name}}{%else%}{{entity.properties[property].name}}, {%endif%}{%endfor%} FROM {{entity.name}} WHERE ? = ?;

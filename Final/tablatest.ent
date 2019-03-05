@@ -1,4 +1,4 @@
-entity TablaCliente {
+entity Cliente {
 
 	id : integer
 	nombre : string
@@ -7,14 +7,14 @@ entity TablaCliente {
 
 }
 
-entity TablaPedido {
+entity Pedido {
 
 	id : integer
 	fecha : fecha
 
 }
 
-entity TablaProveedor {
+entity Proveedor {
 
 	id : integer
 	nombre : string
@@ -22,13 +22,14 @@ entity TablaProveedor {
 
 }
 
-entity TablaDireccion {
+entity Direccion {
 	
 	id : integer
+	direccion : string
 
 }
 
-entity TablaFactura {
+entity Factura {
 
 	id : integer
 	valor : integer
@@ -38,14 +39,14 @@ entity TablaFactura {
 
 }
 
-entity TablaArticulo {
+entity Articulo {
 
 	id : integer
 	nombre : string
 
 }
 
-entity TablaPlanta {
+entity Planta {
 
 	id : integer
 	nombre : string

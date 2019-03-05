@@ -1,7 +1,7 @@
-create table {{entity.name|capitalize}} (
+CREATE TABLE {{entity.name|capitalize}} (
 
-	{% for property in entity.properties %}
-		{{property.name}} {{property.type|sqltype}};
-	{% endfor %}
-
+{% for property in entity.properties %}
+	{{property.name}} {{property.type|sqltype}};
+{% endfor %}
+	PRIMARY KEY(?);
 );
